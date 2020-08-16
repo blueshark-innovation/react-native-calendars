@@ -3,8 +3,6 @@ import {Text, View} from 'react-native';
 import styleConstructor from './style';
 import PropTypes from 'prop-types';
 import {Ionicons} from "@expo/vector-icons";
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-import {grey7, white} from "../../../../../src/theme";
 
 const Dot = ({
   theme,
@@ -39,6 +37,10 @@ const Dot = ({
       dotStyle.push(style.todayDot);
     }
 
+    if (!iconColor) {
+      iconColor = 'black'
+    }
+
   }
 
   return (
@@ -54,7 +56,7 @@ const Dot = ({
         </View>}
         {dayAfter > 0 && <View style={{marginTop: 0}}>
           <View style={{
-            backgroundColor: grey7,
+            backgroundColor: iconColor,
             width: 14,
             height: 14,
             borderRadius: 24,
