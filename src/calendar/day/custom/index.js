@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 
 import styleConstructor from './style';
 import {shouldUpdate} from '../../../component-updater';
-
+import Dot from '../../dot';
 
 class Day extends Component {
   static displayName = 'IGNORE';
-  
+
   static propTypes = {
     // TODO: disabled props should be removed
     state: PropTypes.oneOf(['selected', 'disabled', 'today', '']),
@@ -17,7 +17,7 @@ class Day extends Component {
     marking: PropTypes.any,
     onPress: PropTypes.func,
     onLongPress: PropTypes.func,
-    date: PropTypes.object
+    date: PropTypes.object,
   };
 
   constructor(props) {
@@ -37,31 +37,46 @@ class Day extends Component {
   }
 
   shouldComponentUpdate(nextProps) {
-    return shouldUpdate(this.props, nextProps, ['state', 'children', 'marking', 'onPress', 'onLongPress']);
+    return shouldUpdate(this.props, nextProps, [
+      'state',
+      'children',
+      'marking',
+      'onPress',
+      'onLongPress',
+    ]);
   }
 
   render() {
+    const {theme} = this.props;
     let containerStyle = [this.style.base];
     let textStyle = [this.style.text];
-    
+
     let marking = this.props.marking || {};
     if (marking && marking.constructor === Array && marking.length) {
       marking = {
-        marking: true
+        marking: true,
       };
     }
 
-    const isDisabled = typeof marking.disabled !== 'undefined' ? marking.disabled : this.props.state === 'disabled';
-    
-    if (marking.selected) {
-      containerStyle.push(this.style.selected);
-      textStyle.push(this.style.selectedText);
-    } else if (isDisabled) {
-      textStyle.push(this.style.disabledText);
-    } else if (this.props.state === 'today') {
-      containerStyle.push(this.style.today);
-      textStyle.push(this.style.todayText);
-    }
+    const isDisabled =
+      typeof marking.disabled !== 'undefined'
+        ? marking.disabled
+        : this.props.state === 'disabled';
+
+    const isToday = this.props.state === 'today';
+
+    const {
+      marked,
+      dotColor,
+      selected,
+      icon,
+      dayAfter,
+      selectedColor,
+      selectedTextColor,
+      //activeOpacity,
+      //disableTouchEvent,
+    } = marking;
+
 
     if (marking.customStyles && typeof marking.customStyles === 'object') {
       const styles = marking.customStyles;
@@ -76,18 +91,39 @@ class Day extends Component {
       }
     }
 
+    if (marking.selected) {
+      containerStyle.push(this.style.selected);
+      textStyle.push(this.style.selectedText);
+    } else if (isDisabled) {
+      textStyle.push(this.style.disabledText);
+    } else if (this.props.state === 'today') {
+      containerStyle.push(this.style.today);
+      textStyle.push(this.style.todayText);
+    }
+
     return (
       <TouchableOpacity
         testID={this.props.testID}
-        style={containerStyle}
+        style={[containerStyle, {marginTop: -1  }]}
         onPress={this.onDayPress}
         onLongPress={this.onDayLongPress}
         activeOpacity={marking.activeOpacity}
         disabled={marking.disableTouchEvent}
         accessibilityRole={isDisabled ? undefined : 'button'}
-        accessibilityLabel={this.props.accessibilityLabel}
-      >
-        <Text allowFontScaling={false} style={textStyle}>{String(this.props.children)}</Text>
+        accessibilityLabel={this.props.accessibilityLabel}>
+        <Text allowFontScaling={false} style={textStyle}>
+          {String(this.props.children)}
+        </Text>
+        <Dot
+          theme={theme}
+          isMarked={marked}
+          dotColor={dotColor}
+          isSelected={selected}
+          isToday={isToday}
+          isDisabled={isDisabled}
+          icon={icon}
+          dayAfter={dayAfter}
+        />
       </TouchableOpacity>
     );
   }

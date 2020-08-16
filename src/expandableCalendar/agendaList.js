@@ -131,15 +131,10 @@ class AgendaList extends Component {
   }
 
   renderSectionHeader = ({section: {title}}) => {
-    let sectionTitle = title;
-
-    if (this.props.dayFormat) {
-      const date = XDate(title).toString(this.props.dayFormat);
-      const today = XDate().toString(this.props.dayFormat);
-      const todayString = XDate.locales[XDate.defaultLocale].today || commons.todayString;
-      
-      sectionTitle = date === today ? `${todayString}, ${date}` : date;
-    }
+    const today = XDate().toString(this.props.dayFormat);
+    const date = XDate(title).toString(this.props.dayFormat);
+    const todayString = XDate.locales[XDate.defaultLocale].today || commons.todayString;
+    const sectionTitle = date === today ? `${todayString}, ${date}` : date;
 
     return (
       <Text allowFontScaling={false} style={[this.style.sectionText, this.props.sectionStyle]} onLayout={this.onHeaderLayout}>{sectionTitle}</Text>

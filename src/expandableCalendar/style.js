@@ -51,7 +51,6 @@ export default function styleConstructor(theme = {}) {
       paddingTop: 24, // 8
       paddingBottom: 8,
       paddingLeft: 20,
-      paddingRight: 20,
       backgroundColor: appStyle.calendarBackground,
       textAlign: 'left',
       textTransform: 'uppercase'
@@ -103,8 +102,7 @@ export default function styleConstructor(theme = {}) {
       color: appStyle.textSectionTitleColor
     },
     arrowImage: {
-      tintColor: appStyle.arrowColor,
-      transform: commons.isRTL ? [{scaleX: -1}] : undefined
+      tintColor: appStyle.arrowColor
     },
     todayButtonContainer: {
       alignItems: appStyle.todayButtonPosition === 'right' ? 'flex-end' : 'flex-start',

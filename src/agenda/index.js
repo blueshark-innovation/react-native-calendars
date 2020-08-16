@@ -12,14 +12,11 @@ import {VelocityTracker} from '../input';
 import {AGENDA_CALENDAR_KNOB} from '../testIDs';
 
 
-const HEADER_HEIGHT = 104;
+const HEADER_HEIGHT = 112;
 const KNOB_HEIGHT = 24;
-//Fallback for react-native-web or when RN version is < 0.44
+// Fallback when RN version is < 0.44
 const {Text, View, Dimensions, Animated, ViewPropTypes} = ReactNative;
-const viewPropTypes =
-  typeof document !== 'undefined'
-    ? PropTypes.shape({style: PropTypes.object})
-    : ViewPropTypes || View.propTypes;
+const viewPropTypes = ViewPropTypes || View.propTypes;
 
 /**
  * @description: Agenda component
