@@ -71,6 +71,7 @@ class Day extends Component {
       selected,
       icon,
       dayAfter,
+      iconColor,
       selectedColor,
       selectedTextColor,
       //activeOpacity,
@@ -123,6 +124,7 @@ class Day extends Component {
           isDisabled={isDisabled}
           icon={icon}
           dayAfter={dayAfter}
+          iconColor={iconColor}
         />
       </TouchableOpacity>
     );

@@ -64,7 +64,7 @@ Navigation.events().registerAppLaunchedListener(() => {
               options: {
                 topBar: {
                   title: {
-                    text: 'Wix RN Calendars'
+                    text: 'BS RN Calendars'
                   }
                 }
               }

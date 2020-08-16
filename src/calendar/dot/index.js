@@ -14,6 +14,7 @@ const Dot = ({
   isToday,
   isSelected,
   icon,
+  iconColor,
   dayAfter
 }) => {
   const style = styleConstructor(theme);
@@ -49,7 +50,7 @@ const Dot = ({
       <View style={{flexDirection: "row", justifyContent: "center", alignItems: "center", marginTop: -1, width: 16,
             backgroundColor: 'transparent', marginLeft: -8}}>
         {icon && <View style={{marginRight: 2}}>
-          <Ionicons name={icon} color={grey7} size={16}/>
+          <Ionicons name={icon} color={iconColor} size={16}/>
         </View>}
         {dayAfter > 0 && <View style={{marginTop: 0}}>
           <View style={{
@@ -60,7 +61,7 @@ const Dot = ({
             alignItems: "center",
             justifyContent: 'center'
           }}>
-            <Text style={{fontSize: 10, color: white}}>{dayAfter}</Text>
+            <Text style={{fontSize: 10, color: 'white'}}>{dayAfter}</Text>
           </View>
         </View>}
       </View>
