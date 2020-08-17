@@ -30,6 +30,10 @@
 		4FC60C8B41A0203A6611D553 /* Pods_CalendarsExample_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BB2A03D1C643A412632A50C /* Pods_CalendarsExample_tvOS.framework */; };
 		7BD7701C8084DC24454C5FC9 /* Pods_CalendarsExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F268D13D1DE22AECC009D3F /* Pods_CalendarsExample.framework */; };
 		99CF2FE76DECE7F742521EA2 /* Pods_CalendarsExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 253243C6BBBACF21ABBB441D /* Pods_CalendarsExampleTests.framework */; };
+		5E9AC8BC130F4376A308E03F /* HEY-LOVER.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 61FD55A1C8DE4DC49DABF28C /* HEY-LOVER.ttf */; };
+		B81BDA0E63674B50857DCE00 /* NUNITO-LIGHT.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E6D16D53B5204C73945529FC /* NUNITO-LIGHT.ttf */; };
+		CA0B8010924C480A8C565AD5 /* NUNITO-REGULAR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BC1E024124D435B95CD27CC /* NUNITO-REGULAR.ttf */; };
+		ACBA4491E49748B596432845 /* NUNITO-SEMIBOLD.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BB4604EA532453A83767D35 /* NUNITO-SEMIBOLD.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -332,6 +336,10 @@
 		EF4683684367395045561C12 /* Pods-CalendarsExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalendarsExampleTests.release.xcconfig"; path = "Target Support Files/Pods-CalendarsExampleTests/Pods-CalendarsExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		EF58906124F2602DF92D1079 /* Pods-CalendarsExample-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalendarsExample-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-CalendarsExample-tvOSTests/Pods-CalendarsExample-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		F437D091B67B0F0E9A569F4B /* Pods-CalendarsExample-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CalendarsExample-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-CalendarsExample-tvOSTests/Pods-CalendarsExample-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		61FD55A1C8DE4DC49DABF28C /* HEY-LOVER.ttf */ = {isa = PBXFileReference; name = "HEY-LOVER.ttf"; path = "../assets/fonts/HEY-LOVER.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E6D16D53B5204C73945529FC /* NUNITO-LIGHT.ttf */ = {isa = PBXFileReference; name = "NUNITO-LIGHT.ttf"; path = "../assets/fonts/NUNITO-LIGHT.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9BC1E024124D435B95CD27CC /* NUNITO-REGULAR.ttf */ = {isa = PBXFileReference; name = "NUNITO-REGULAR.ttf"; path = "../assets/fonts/NUNITO-REGULAR.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2BB4604EA532453A83767D35 /* NUNITO-SEMIBOLD.ttf */ = {isa = PBXFileReference; name = "NUNITO-SEMIBOLD.ttf"; path = "../assets/fonts/NUNITO-SEMIBOLD.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -561,6 +569,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				398EEB99225A4017004C3591 /* Frameworks */,
 				A8FED2BAC2F90DAB3BDD3A6B /* Pods */,
+				7F65C37C38314E21B039C7C6 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -591,6 +600,18 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		7F65C37C38314E21B039C7C6 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				61FD55A1C8DE4DC49DABF28C /* HEY-LOVER.ttf */,
+				E6D16D53B5204C73945529FC /* NUNITO-LIGHT.ttf */,
+				9BC1E024124D435B95CD27CC /* NUNITO-REGULAR.ttf */,
+				2BB4604EA532453A83767D35 /* NUNITO-SEMIBOLD.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -1031,6 +1052,10 @@
 				247F69DC2483A793006A1A73 /* main.jsbundle in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				5E9AC8BC130F4376A308E03F /* HEY-LOVER.ttf in Resources */,
+				B81BDA0E63674B50857DCE00 /* NUNITO-LIGHT.ttf in Resources */,
+				CA0B8010924C480A8C565AD5 /* NUNITO-REGULAR.ttf in Resources */,
+				ACBA4491E49748B596432845 /* NUNITO-SEMIBOLD.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

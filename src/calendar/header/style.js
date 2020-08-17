@@ -1,9 +1,9 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Platform} from 'react-native';
 import * as defaultStyle from '../../style';
 
 const STYLESHEET_ID = 'stylesheet.calendar.header';
 
-export default function(theme={}) {
+export default function (theme = {}) {
   const appStyle = {...defaultStyle, ...theme};
   return StyleSheet.create({
     header: {
@@ -12,10 +12,10 @@ export default function(theme={}) {
       paddingLeft: 10,
       paddingRight: 10,
       marginTop: 6,
-      alignItems: 'center'
+      alignItems: 'center',
     },
     headerContainer: {
-      flexDirection: 'row'
+      flexDirection: 'row',
     },
     monthText: {
       fontSize: appStyle.textMonthFontSize,
@@ -23,22 +23,22 @@ export default function(theme={}) {
       fontWeight: appStyle.textMonthFontWeight,
       color: appStyle.monthTextColor,
       margin: 10,
-      marginTop: -3
+      marginTop: Platform.OS === 'android' ? 10 : 14,
     },
     arrow: {
       padding: 10,
-      ...appStyle.arrowStyle
+      ...appStyle.arrowStyle,
     },
     arrowImage: {
-      tintColor: appStyle.arrowColor
+      tintColor: appStyle.arrowColor,
     },
     disabledArrowImage: {
-      tintColor: appStyle.disabledArrowColor
+      tintColor: appStyle.disabledArrowColor,
     },
     week: {
       marginTop: 7,
       flexDirection: 'row',
-      justifyContent: 'space-around'
+      justifyContent: 'space-around',
     },
     dayHeader: {
       marginTop: 2,
@@ -48,11 +48,11 @@ export default function(theme={}) {
       fontSize: appStyle.textDayHeaderFontSize,
       fontFamily: appStyle.textDayHeaderFontFamily,
       fontWeight: appStyle.textDayHeaderFontWeight,
-      color: appStyle.textSectionTitleColor
+      color: appStyle.textSectionTitleColor,
     },
     disabledDayHeader: {
-      color: appStyle.textSectionTitleDisabledColor
+      color: appStyle.textSectionTitleDisabledColor,
     },
-    ...(theme[STYLESHEET_ID] || {})
+    ...(theme[STYLESHEET_ID] || {}),
   });
 }

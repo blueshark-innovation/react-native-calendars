@@ -1,6 +1,6 @@
 {
   "name": "@blueshark-innovation/react-native-calendars",
-  "version": "1.22.6",
+  "version": "1.22.9",
   "main": "src/index.js",
   "description": "React Native Calendar Components",
   "scripts": {
